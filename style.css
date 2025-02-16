@@ -1,0 +1,197 @@
+/* 基本設定 */
+:root {
+  /* カラーパレット */
+  --bg-primary: #0f172a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-primary: #38bdf8;
+  --accent-secondary: #3b82f6;
+  --accent-highlight: #f472b6;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --border-color: rgba(255,255,255,0.1);
+}
+
+/* リセットとベース設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  padding: 40px 0;
+  margin-bottom: 40px;
+  border-radius: 0 0 24px 24px;
+}
+
+.header h1 {
+  font-size: 2.2em;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.1em;
+}
+
+/* セクション */
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--accent-primary);
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* カード */
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-title {
+  color: var(--accent-highlight);
+  font-size: 1.2em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.card-content {
+  color: var(--text-secondary);
+}
+
+/* バッジ */
+.badge {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin-right: 8px;
+}
+
+/* リスト */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.list-item::before {
+  content: "•";
+  color: var(--accent-primary);
+  position: absolute;
+  left: 0;
+}
+
+/* 番号付きリスト */
+ol {
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+ol li {
+  margin-bottom: 8px;
+}
+
+/* ボタン */
+.button {
+  background: var(--accent-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background: var(--accent-secondary);
+}
+
+/* リンク */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-highlight);
+}
+
+/* 強調テキスト */
+strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .header {
+    padding: 30px 0;
+  }
+  
+  .header h1 {
+    font-size: 1.8em;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
